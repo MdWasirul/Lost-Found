@@ -58,8 +58,8 @@ Start frontend
 cd client
 npm start
 📸 Screenshots
+<img width="956" height="514" alt="image" src="https://github.com/user-attachments/assets/975cdf7d-434f-4225-a170-ef943c9c7b56" />
 
-(Add project screenshots here)
 
 📌 Future Improvements
 Real-time chat between users
