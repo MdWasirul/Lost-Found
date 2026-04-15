@@ -1,68 +1,50 @@
 import React from "react";
-import { MapPin, Tag, Calendar, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { MapPin, Tag, ArrowRight } from "lucide-react";
 
 const ItemCard = ({ item }) => {
+  const navigate = useNavigate();
   const isLost = item.type === "lost";
 
   return (
-    <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden">
-      {/* Status Badge */}
-      <div className="relative">
-        <div
-          className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-10 ${
-            isLost
-              ? "bg-red-100 text-red-600"
-              : "bg-emerald-100 text-emerald-600"
-          }`}
-        >
-          {item.type}
-        </div>
-
-        {/* Placeholder for Image */}
-        <div className="h-48 bg-slate-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-          {item.image ? (
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <span className="text-slate-400">No Image Provided</span>
-          )}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-5">
-        <h3 className="text-xl font-bold text-slate-800 mb-2 truncate">
-          {item.title}
-        </h3>
-
-        <p className="text-slate-600 text-sm line-clamp-2 mb-4 h-10">
-          {item.description}
-        </p>
-
-        <div className="space-y-2 mb-6">
-          <div className="flex items-center text-slate-500 text-sm">
-            <MapPin size={16} className="mr-2 text-indigo-500" />
-            {item.location}
-          </div>
-          <div className="flex items-center text-slate-500 text-sm">
-            <Tag size={16} className="mr-2 text-indigo-500" />
-            {item.category}
-          </div>
-          <div className="flex items-center text-slate-500 text-sm">
-            <Calendar size={16} className="mr-2 text-indigo-500" />
+    <div className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
+      {/* Type Ribbon */}
+      <div className={`h-2 w-full ${isLost ? "bg-red-500" : "bg-green-500"}`} />
+      
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
+            isLost ? "bg-red-50 text-red-600" : "bg-green-50 text-green-600"
+          }`}>
+            {item.type}
+          </span>
+          <span className="text-slate-400 text-[10px] font-bold">
             {new Date(item.createdAt).toLocaleDateString()}
+          </span>
+        </div>
+
+        <h4 className="text-xl font-bold text-slate-800 mb-2 truncate group-hover:text-indigo-600 transition-colors">
+          {item.title}
+        </h4>
+
+        <div className="space-y-3 mb-6">
+          <div className="flex items-center gap-2 text-slate-500 text-sm">
+            <Tag size={14} className="text-indigo-500" />
+            <span className="font-medium">{item.category}</span>
+          </div>
+          <div className="flex items-center gap-2 text-slate-500 text-sm">
+            <MapPin size={14} className="text-indigo-500" />
+            <span className="truncate">{item.location}</span>
           </div>
         </div>
 
-        <button className="w-full py-3 bg-slate-900 hover:bg-indigo-600 text-white rounded-xl font-semibold flex items-center justify-center transition-colors group">
-          View Details
-          <ChevronRight
-            size={18}
-            className="ml-1 group-hover:translate-x-1 transition-transform"
-          />
+        {/* View Details Button - Connects to ItemDetail.jsx */}
+        <button 
+          onClick={() => navigate(`/item/${item._id}`)}
+          className="w-full flex items-center justify-center gap-2 py-3 bg-slate-50 text-slate-700 font-bold rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300"
+        >
+          <span>Details</span>
+          <ArrowRight size={16} />
         </button>
       </div>
     </div>
