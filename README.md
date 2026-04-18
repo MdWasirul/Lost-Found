@@ -58,8 +58,17 @@ Start frontend
 cd client
 npm start
 📸 Screenshots
-<img width="956" height="514" alt="image" src="https://github.com/user-attachments/assets/975cdf7d-434f-4225-a170-ef943c9c7b56" />
+Screenshots:1
+<img width="1894" height="988" alt="Screenshot 2026-04-18 223245" src="https://github.com/user-attachments/assets/3c85d1b4-bd41-499f-a010-610021fbe1b0" />
+Screenshots:2
+<img width="1254" height="849" alt="Screenshot 2026-04-18 223303" src="https://github.com/user-attachments/assets/575b1b63-775b-42e2-a754-b52a36993cd5" />
 
+<img width="944" height="774" alt="Screenshot 2026-04-18 223315" src="https://github.com/user-attachments/assets/40360d01-f357-4422-8ebf-168958ea1038" />
+
+
+<img width="1511" height="847" alt="Screenshot 2026-04-18 223406" src="https://github.com/user-attachments/assets/6a39062c-6b28-421a-8c4c-1b2038d5092f" />
+
+<img width="1601" height="870" alt="Screenshot 2026-04-18 223427" src="https://github.com/user-attachments/assets/5ad5a660-e6a7-4176-b201-8d3330cb0980" />
 
 📌 Future Improvements
 Real-time chat between users
