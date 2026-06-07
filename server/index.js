@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://your-vercel-app.vercel.app'
+    ' https://lost-found-gules-alpha.vercel.app/',
   ],
 
   credentials: true
