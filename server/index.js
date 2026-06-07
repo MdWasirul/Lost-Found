@@ -18,7 +18,7 @@ app.use(cors({
     'http://localhost:5173',
     ' https://lost-found-gules-alpha.vercel.app/',
   ],
-
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
