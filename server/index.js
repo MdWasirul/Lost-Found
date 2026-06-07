@@ -11,16 +11,17 @@ import connectDB from './config/db.js'; // 2. Now it's safe to import this
 const app = express();
 connectDB();
 // Middleware
-app.use(express.json());
-app.use(cookieParser());
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    ' https://lost-found-gules-alpha.vercel.app/',
+    "http://localhost:5173",
+    "https://lost-found-gules-alpha.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+app.use(express.json());
+app.use(cookieParser());
+
 
 // Routes
 app.use('/api/auth', authRoutes);
